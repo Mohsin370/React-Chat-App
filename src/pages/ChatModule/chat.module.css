@@ -4,9 +4,14 @@
     background-color: #dbe3f1;
     margin-top: 20px;
 }
-.test{
-    height: 90%;
+.chatContainer{
+    height: 83vh;
     padding: 10px;
+    overflow: auto ;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
 }
 
 .MessageBox{

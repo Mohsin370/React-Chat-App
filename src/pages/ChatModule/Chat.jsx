@@ -7,6 +7,36 @@ const Messages = [
     {Message:'Hello from Sender', sender:true, Image:''},
     {Message:'Hello from Receiver', sender:false, Image:''},
 
+    {Message:'Hello from Sender', sender:true, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Sender', sender:true, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Sender', sender:true, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Sender', sender:true, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Sender', sender:true, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Sender', sender:true, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Sender', sender:true, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Sender', sender:true, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
+    {Message:'Hello from Receiver', sender:false, Image:''},
 ]
 class Chat extends Component {
 
@@ -14,7 +44,7 @@ class Chat extends Component {
         return (
             <React.Fragment>
                 <Row className={styles.container}>
-                    <Col span={24} className={styles.test}>
+                    <Col span={24} className={styles.chatContainer}>
                         {Messages.map((item,index)=>{
                             return(
                         <TextMessage MessageData  = {item}></TextMessage>
@@ -28,6 +58,7 @@ class Chat extends Component {
                         </Button>
                     </Col>
                 </Row>
+               
             </React.Fragment>
         )
     }
