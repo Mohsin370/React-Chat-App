@@ -1,0 +1,19 @@
+.container{
+    height: 93%;
+    border-radius:10px ;
+    background-color: #dbe3f1;
+    margin-top: 20px;
+}
+.test{
+    height: 90%;
+    padding: 10px;
+}
+
+.MessageBox{
+    position: relative;
+    bottom: 0%;
+    width: 100%;
+    display: flex;
+    margin-left: 35px;
+    height: 40px;
+}

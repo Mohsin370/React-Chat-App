@@ -1,0 +1,29 @@
+.receiverMessageClass{
+    display: flex;
+    align-items: center;    
+}
+
+.senderMessageClass{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+
+.senderMessage{
+    color: white;
+    background-color: #1b223c;
+    margin-right: 10px ;
+    border-radius: 6px;
+    padding: 10px 12px 0px 12px;
+    margin-bottom: 10px;
+}
+
+.receiverMessage{
+    background-color: white;
+    margin-left: 10px ;
+    border-radius: 6px;
+    padding: 10px 12px 0px 12px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,50 @@
+.col1Heading{
+    margin: auto;
+    height: 50px;
+
+    display: flex;
+    margin-top: 35px;
+}
+
+.logo{
+    width: 25%;
+    text-align: center;
+}
+
+.Heading{
+    width: 75%;
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+
+}
+
+.secondRow{
+    margin-top: 30px;
+}
+
+.Card{
+    margin: auto;
+    background-color: #d4e2ff;
+    height: 230px;
+    border-radius: 10px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.Collapse{
+    
+
+    margin-top: 10px;
+    background-color: white;
+    border: none;
+    border-bottom: 0px solid white;
+}
+.Panel{
+    font-weight: bolder;
+}
+
