@@ -1,0 +1,62 @@
+.leftColSignIn{
+height: 100vh;
+/* background-color: #293146; */
+}
+.logo{
+    float: right;
+    padding-right: 30px;
+    padding-top: 40px;
+}
+.Logincontainer{
+    height: 400px;
+    margin-top: 100px;
+}
+.loginSubcontainer{
+    padding-left: 30px;
+    padding-top: 30px;
+}
+.inputGlobal{
+    width: 400px;
+    max-width: 100%;
+    background-color: #f2f5fa;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+}
+.inputTitle{
+    font-weight: 600;
+    font-size: small;
+}
+
+.loginButton{   
+     width: 440px;
+    max-width: 100%;
+    background-color: #1c53f4;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    color: white;
+    margin-top: 30px;
+}
+
+.forgotPasswordText{
+    color: #1c53f4;
+}
+
+.createNew{
+    text-align: center;
+    padding-top: 90px;
+}
+.createAccount{
+    color: #1c53f4;
+    font-weight: bold;
+}
+
+.flexSpace{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}

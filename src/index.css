@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9,6 +8,11 @@ body {
 
 code {
 
+  font-family: 'Quicksand', sans-serif;
+
+}
+
+h3,p,h4,h1,a,span,::placeholder, button,div,input{
   font-family: 'Quicksand', sans-serif;
 
 }

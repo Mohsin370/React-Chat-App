@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import Main from "./pages/Main.jsx";
+import Routes from './pages/routes/routes'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Main></Main>
+    <Routes></Routes>
   </React.StrictMode>,
   document.getElementById("root")
 );
