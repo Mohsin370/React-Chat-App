@@ -3,9 +3,32 @@ import React, { Component } from 'react';
 import styles from './login.module.css';
 import CustomCarousel from '../../components/carousel/carousel';
 import {Link} from 'react-router-dom';
-
+import ApiCall from '../../api/apiCalls';
 
 class Login extends Component {
+
+    state={
+        Email:'',
+        Password:'',
+    }
+
+    login = ()=>{
+        const data={
+            email:this.state.Email,
+            password:this.state.Password,
+        }
+        ApiCall.login(data);
+
+    }
+
+    getEmail = (event)=>{
+        this.setState({Email:event.target.value});
+    }
+    
+    getPassword = (event)=>{
+        this.setState({Password:event.target.value});
+    }
+
     render() {
         return (
             <Row>
@@ -24,7 +47,7 @@ class Login extends Component {
                           
 
                                 <p className={styles.inputTitle}>Email</p>
-                                <input className={styles.inputGlobal} placeholder="Enter Email Here"></input>
+                                <input className={styles.inputGlobal} placeholder="Enter Email Here" onChange={this.getEmail}></input>
 
                                 <Row className={styles.flexSpace}>
                                     <Col gutter={{xs:18, lg:16}} >
@@ -34,9 +57,9 @@ class Login extends Component {
                                         <p className={styles.forgotPasswordText}> Forgot password?</p>
                                     </Col>
                                 </Row>
-                                <input type="password" className={styles.inputGlobal} placeholder="Enter Password"></input>
+                                <input type="password" className={styles.inputGlobal} placeholder="Enter Password" onChange={this.getPassword}></input>
                                 <div className="text-center">
-                                    <button className={styles.loginButton}>Login</button>
+                                    <button className={styles.loginButton} onClick={this.login}>Login</button>
                                 </div>
                                 
                             </div>

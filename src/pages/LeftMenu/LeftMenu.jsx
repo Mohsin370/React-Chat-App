@@ -45,7 +45,7 @@ class LeftMenu extends Component {
                 <Row>
                     <Col span={20} style={{ margin: 'auto' }}>
 
-                        <Collapse className={styles.Collapse} >
+                        <Collapse defaultActiveKey={['1']} className={styles.Collapse} >
                             <Panel header="Conversations" className={styles.Panel} key="1">
 
                                 {arr.map((item) => {

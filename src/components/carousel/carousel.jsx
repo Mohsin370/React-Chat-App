@@ -13,13 +13,13 @@ class CustomCarousel extends Component {
         return(
             <Carousel autoplay className={styles.carouselContainer} afterChange={onChange}>
                 <div  >
-                    <img alt="img" src="https://images.unsplash.com/photo-1523285367489-d38aec03b6bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"></img>
+                    <img className={styles.carouselImage} alt="img" src="https://images.unsplash.com/photo-1523285367489-d38aec03b6bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"></img>
                 </div>
                 <div>                
-                        <img alt="img" src="https://images.unsplash.com/photo-1544380904-c686aad2fc40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"></img>
+                        <img alt="img" className={styles.carouselImage} src="https://images.unsplash.com/photo-1544380904-c686aad2fc40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"></img>
                 </div>
                 <div>
-                        <img alt="img" src="https://images.unsplash.com/photo-1547223487-c0bbe3535bb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"></img>
+                        <img alt="img" className={styles.carouselImage} src="https://images.unsplash.com/photo-1547223487-c0bbe3535bb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"></img>
                 </div>
             </Carousel>
         )

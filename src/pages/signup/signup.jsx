@@ -2,10 +2,53 @@ import { Row, Col } from 'antd';
 import React, { Component } from 'react';
 import styles from './signup.module.css';
 import CustomCarousel from '../../components/carousel/carousel';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import ApiCall from '../../api/apiCalls';
+
 
 
 class Signup extends Component {
+
+
+    state = {
+        Email: '',
+        Password: '',
+        FirstName :'',
+        LastName :'',
+
+    }
+
+    Signup = () => {
+        const data = {
+            email: this.state.Email,
+            password: this.state.Password,
+            FirstName: this.state.FirstName,
+            LastName: this.state.LastName,
+
+        }
+        ApiCall.signup(data);
+
+    }
+
+    getEmail = (event) => {
+        this.setState({ Email: event.target.value });
+    }
+
+    getPassword = (event) => {
+        this.setState({ Password: event.target.value });
+    }
+
+    
+    getFirstName = (event) => {
+        this.setState({ FirstName: event.target.value });
+    }
+
+    getLastName = (event) => {
+        this.setState({ LastName: event.target.value });
+    }
+
+
+
     render() {
         return (
             <Row>
@@ -24,32 +67,32 @@ class Signup extends Component {
                                 <Row>
                                     <Col span={11}>
                                         <p className={styles.inputTitle}>First Name</p>
-                                        <input className={styles.inputGlobal} placeholder="First Name"></input>
+                                        <input className={styles.inputGlobal} placeholder="First Name"  onChange={this.getFirstName}></input>
                                     </Col>
                                     <Col span={1}>
                                     </Col>
                                     <Col span={11}>
                                         <p className={styles.inputTitle}>Last Name</p>
-                                        <input className={styles.inputGlobal} placeholder="Last Name"></input>
+                                        <input className={styles.inputGlobal} placeholder="Last Name"  onChange={this.getLastName}></input>
                                     </Col>
                                 </Row>
 
-                                <p className={styles.inputTitle}>Username</p>
-                                <input className={styles.inputGlobal} placeholder="Enter Username Here"></input>
+                                <p className={styles.inputTitle}>Email</p>
+                                <input className={styles.inputGlobal} placeholder="Enter Email Here"  onChange={this.getEmail}></input>
 
                                 <Row className={styles.flexSpace}>
-                                    <Col gutter={{xs:18, lg:16}} >
+                                    <Col gutter={{ xs: 18, lg: 16 }} >
                                         <p className={styles.inputTitle}>Password</p>
                                     </Col>
-                                    <Col gutter={{xs:6, lg:8}}className="float-right">
+                                    <Col gutter={{ xs: 6, lg: 8 }} className="float-right">
                                         <p className={styles.forgotPasswordText}> Forgot password?</p>
                                     </Col>
                                 </Row>
-                                <input type="password" className={styles.inputGlobal} placeholder="Enter Password"></input>
+                                <input type="password" className={styles.inputGlobal} placeholder="Enter Password"  onChange={this.getPassword}></input>
                                 <div className="text-center">
-                                    <button className={styles.signupButton}>Signup</button>
+                                    <button className={styles.signupButton} onClick={this.Signup}>Signup</button>
                                 </div>
-                                
+
                             </div>
 
                             <div className={styles.createNew}>
