@@ -1,4 +1,4 @@
-import { Row, Col, Form, Input, Space } from 'antd';
+import { Row, Col } from 'antd';
 import React, { Component } from 'react';
 import styles from './signup.module.css';
 import CustomCarousel from '../../components/carousel/carousel';
@@ -7,10 +7,6 @@ import {Link} from 'react-router-dom';
 
 class Signup extends Component {
     render() {
-        const layout = {
-            labelCol: { span: 8 },
-            wrapperCol: { span: 16 },
-        };
         return (
             <Row>
                 <Col span={11} className={styles.leftColSignIn} >
@@ -57,7 +53,7 @@ class Signup extends Component {
                             </div>
 
                             <div className={styles.createNew}>
-                                <p>Already have an account? <span><Link to="/login"><a className={styles.createAccount}>Login now</a></Link></span></p>
+                                <p>Already have an account? <span><Link to="/login"><span className={styles.createAccount}>Login now</span></Link></span></p>
                             </div>
                         </Col>
                     </Row>

@@ -33,7 +33,7 @@ class Chat extends Component {
     }
 
     sendMessage = (event) => {
-        if (event.key == 'Enter' || event === 'send') {
+        if (event.key === 'Enter' || event === 'send') {
             socketConn.emit('Chat:receive', {
                 message: this.state.Message,
             })

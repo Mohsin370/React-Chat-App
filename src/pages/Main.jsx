@@ -4,7 +4,7 @@ import { Row, Col,  } from 'antd';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import LeftMenu from './LeftMenu/LeftMenu';
 import Chat from './ChatModule/Chat';
-import Login from './login/login'
+// import Login from './login/login'
 class Main extends Component {
 
     render() {

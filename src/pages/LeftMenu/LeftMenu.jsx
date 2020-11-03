@@ -55,7 +55,7 @@ class LeftMenu extends Component {
                                             <Avatar size={44} icon={<UserOutlined />} src={item.image} />
                                             <p style={{ marginLeft: '10px' }}>{item.name}</p>
                                             <div style={{ marginLeft: '35%', marginTop: '-10px' }}>
-                                                {item.Messages != 0 ? <Badge count={5} >
+                                                {item.Messages !== '0' ? <Badge count={5} >
                                                 </Badge> : ''}
 
                                             </div>

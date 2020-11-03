@@ -1,10 +1,9 @@
-import { Row, Col, Form, Input, Space } from 'antd';
+import { Row, Col} from 'antd';
 import React, { Component } from 'react';
 import styles from './login.module.css';
 import CustomCarousel from '../../components/carousel/carousel';
 import {Link} from 'react-router-dom';
 import Api from '../../api/apiCalls';
-import Axios from 'axios';
 
 
 class Login extends Component {
@@ -14,11 +13,6 @@ class Login extends Component {
   }
   
   render() {
-    const layout = {
-      labelCol: { span: 8 },
-      wrapperCol: { span: 16 },
-    };
-
    const login = ()=>{
         const data = {
           email: this.state.email,
@@ -28,9 +22,6 @@ class Login extends Component {
         Api.login(data).then((res)=>{
           console.log(res);
         })
-
-        // Axios.post('/login',data);
-
     }
 
 
@@ -60,7 +51,7 @@ class Login extends Component {
               </div>
 
               <div className={styles.createNew}>
-                <p>Don't have an Account yet? <span><Link to="/signup"><a className={styles.createAccount}>Create an Account</a></Link></span></p>
+                <p>Don't have an Account yet? <span><Link to="/signup"><span className={styles.createAccount}>Create an Account</span></Link></span></p>
               </div>
             </Col>
           </Row>
