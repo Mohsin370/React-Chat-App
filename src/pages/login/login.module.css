@@ -1,62 +1,65 @@
-.leftColSignIn{
-height: 100vh;
-/* background-color: #293146; */
-}
-.logo{
+.leftColSignIn {
+    height: 100vh;
+  }
+  .logo {
     float: right;
-    padding-right: 30px;
-    padding-top: 40px;
-}
-.Logincontainer{
-    height: 400px;
+    margin-right: 60px;
+    margin-top: 10%;
+  }
+  .Logincontainer {
+    min-height: 80vh;
     margin-top: 100px;
-}
-.loginSubcontainer{
+  }
+  .loginSubcontainer {
     padding-left: 30px;
     padding-top: 30px;
-}
-.inputGlobal{
-    width: 400px;
+  }
+  .inputGlobal {
+    width: 100rem;
     max-width: 100%;
     background-color: #f2f5fa;
     border: none;
     border-radius: 5px;
     padding: 10px;
     outline: none;
-}
-.inputTitle{
+  }
+  .inputTitle {
     font-weight: 600;
     font-size: small;
-}
-
-.loginButton{   
-     width: 440px;
-    max-width: 100%;
+  }
+  
+  .loginButton {
+    /* min-width: 440px; */
     background-color: #1c53f4;
     border: none;
     border-radius: 10px;
     outline: none;
-    padding-top: 13px;
-    padding-bottom: 13px;
+    padding-top: 2%;
+    padding-bottom: 2%;
     color: white;
     margin-top: 30px;
-}
-
-.forgotPasswordText{
+  
+    padding-left: 40%;
+    padding-right: 40%;
+  
+  }
+  
+  .forgotPasswordText {
     color: #1c53f4;
-}
-
-.createNew{
+  }
+  
+  .createNew {
     text-align: center;
-    padding-top: 90px;
-}
-.createAccount{
+    padding-top: 20px;
+  }
+  .createAccount {
     color: #1c53f4;
     font-weight: bold;
-}
-
-.flexSpace{
+  }
+  
+  .flexSpace {
     display: flex;
     justify-content: space-between;
     padding-top: 20px;
-}
+  }
+  

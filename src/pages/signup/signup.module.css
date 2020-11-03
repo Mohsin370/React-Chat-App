@@ -3,11 +3,11 @@
 }
 .logo {
   float: right;
-  padding-right: 30px;
-  padding-top: 40px;
+  margin-right: 60px;
+  margin-top: 10%;
 }
 .Signupcontainer {
-  min-height: 60vh;
+  min-height: 80vh;
   margin-top: 100px;
 }
 .signupSubcontainer {
@@ -15,7 +15,7 @@
   padding-top: 30px;
 }
 .inputGlobal {
-  width: 60rem;
+  width: 100rem;
   max-width: 100%;
   background-color: #f2f5fa;
   border: none;
@@ -29,15 +29,19 @@
 }
 
 .signupButton {
-  min-width: 440px;
+  /* min-width: 440px; */
   background-color: #1c53f4;
   border: none;
   border-radius: 10px;
   outline: none;
-  padding-top: 13px;
-  padding-bottom: 13px;
+  padding-top: 2%;
+  padding-bottom: 2%;
   color: white;
   margin-top: 30px;
+
+  padding-left: 40%;
+  padding-right: 40%;
+
 }
 
 .forgotPasswordText {

@@ -38,10 +38,10 @@ class Signup extends Component {
                                 <input className={styles.inputGlobal} placeholder="Enter Username Here"></input>
 
                                 <Row className={styles.flexSpace}>
-                                    <Col span={16}>
+                                    <Col gutter={{xs:18, lg:16}} >
                                         <p className={styles.inputTitle}>Password</p>
                                     </Col>
-                                    <Col span={8}>
+                                    <Col gutter={{xs:6, lg:8}}className="float-right">
                                         <p className={styles.forgotPasswordText}> Forgot password?</p>
                                     </Col>
                                 </Row>
@@ -49,6 +49,7 @@ class Signup extends Component {
                                 <div className="text-center">
                                     <button className={styles.signupButton}>Signup</button>
                                 </div>
+                                
                             </div>
 
                             <div className={styles.createNew}>
