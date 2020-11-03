@@ -46,10 +46,9 @@ class Signup extends Component {
                                     </Col>
                                 </Row>
                                 <input type="password" className={styles.inputGlobal} placeholder="Enter Password"></input>
-
-
-
-                                <button className={styles.signupButton}>Signup</button>
+                                <div className="text-center">
+                                    <button className={styles.signupButton}>Signup</button>
+                                </div>
                             </div>
 
                             <div className={styles.createNew}>

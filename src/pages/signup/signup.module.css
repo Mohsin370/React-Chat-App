@@ -7,7 +7,7 @@
   padding-top: 40px;
 }
 .Signupcontainer {
-  height: 400px;
+  min-height: 60vh;
   margin-top: 100px;
 }
 .signupSubcontainer {
@@ -15,7 +15,7 @@
   padding-top: 30px;
 }
 .inputGlobal {
-  width: 440px;
+  width: 60rem;
   max-width: 100%;
   background-color: #f2f5fa;
   border: none;
@@ -25,12 +25,11 @@
 }
 .inputTitle {
   font-weight: 600;
-  font-size: small;
+  font-size: 1rem;
 }
 
 .signupButton {
-  width: 440px;
-  max-width: 100%;
+  min-width: 440px;
   background-color: #1c53f4;
   border: none;
   border-radius: 10px;
