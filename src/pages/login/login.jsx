@@ -9,11 +9,11 @@ class Login extends Component {
     render() {
         return (
             <Row>
-                <Col span={11} className={styles.leftColSignIn} >
+                <Col span={13} className={styles.leftColSignIn} >
                     <CustomCarousel></CustomCarousel>
                 </Col>
 
-                <Col span={13} className={styles.rightColSignIn}>
+                <Col span={11} className={styles.rightColSignIn}>
                     <Row className={styles.logo}>
                         Logo
                     </Row>

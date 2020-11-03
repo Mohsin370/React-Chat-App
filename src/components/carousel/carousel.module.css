@@ -1,8 +1,11 @@
 .carouselContainer{
     height: 100vh;
+
 }
 
 img{
     height: 100vh;
     overflow: hidden;
+    width: 100%;
+
 }
