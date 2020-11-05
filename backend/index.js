@@ -1,6 +1,8 @@
 var express =  require ('express');
 var socket = require('socket.io');
 const bodyParser = require("body-parser");
+let usersController = require("./controllers/users");
+
 
 var app = express();
 // Add headers
@@ -23,10 +25,9 @@ app.use(function (req, res, next) {
   app.use(bodyParser.json());
 
 
-app.post('/login',(req,res) =>{
-    console.log(req.body);
-    res.send("hi")
-})
+app.post('/login',usersController.signin);
+
+app.post('/signup',usersController.signup);
 
 var server = app.listen('4000', ()=>{
     console.log("APP listening on Port 4000")
