@@ -5,6 +5,10 @@ import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { Badge } from 'antd';
 import { Collapse } from 'antd';
+import {Link} from 'react-router-dom';
+import PubSub from 'pubsub-js'
+
+
 const { Panel } = Collapse;
 
 const arr = [
@@ -13,8 +17,27 @@ const arr = [
 
 ]
 
+let FirstName="";
+let LastName="";
+
 class LeftMenu extends Component {
 
+
+    componentWillMount(){
+        let userData = JSON.parse(localStorage.getItem('user'));
+        console.log(userData);
+        if(userData){
+            FirstName = userData.first_name;
+            LastName = userData.last_name;
+        }
+
+    }
+    
+    logout = () => {
+        localStorage.removeItem('user');
+        PubSub.publish('refreshRoute', true);
+
+    }
     render() {
         return (
 
@@ -35,9 +58,11 @@ class LeftMenu extends Component {
                         <div style={{ marginTop: '8%' }}>
                             <Avatar size={64} icon={<UserOutlined />} src="https://scontent.flhe3-1.fna.fbcdn.net/v/t1.0-9/47482767_2049823101782011_378499975849443328_n.jpg?_nc_cat=111&_nc_sid=09cbfe&_nc_eui2=AeEeVtkDElDLEpNqVNGg49aa3OYJvYguTHLc5gm9iC5Mctc4iH6nAwJUMI4jXVVLYMFcrdGpBlIVEwuh7Uhsirui&_nc_ohc=zeq9lKBB6UsAX-s15S6&_nc_ht=scontent.flhe3-1.fna&oh=d1fc8372766af6e7c324603a4e669937&oe=5FA962D8" />
                         </div>
-                        <h1> Khawaja Mohsin </h1>
+                        <h1> {FirstName} {LastName} </h1>
                         <p style={{ lineHeight: '0' }}> Jr. Angular Developer</p>
                         <p style={{ lineHeight: '1.6' }}> I can start fires with what i feel for you</p>
+                        <Link to="/login" onClick={this.logout}><span>Logout</span></Link>
+
 
                     </Col>
                 </Row>

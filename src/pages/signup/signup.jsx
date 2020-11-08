@@ -26,7 +26,14 @@ class Signup extends Component {
             LastName: this.state.LastName,
 
         }
-        ApiCall.signup(data);
+        ApiCall.signup(data).then((res)=>{
+            if(res.data.error === 0 ){
+                console.log(this.props);
+                this.props.history.push('/login')
+            }else{
+
+            }
+        });
 
     }
 

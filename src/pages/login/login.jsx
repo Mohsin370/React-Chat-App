@@ -4,6 +4,9 @@ import styles from './login.module.css';
 import CustomCarousel from '../../components/carousel/carousel';
 import {Link} from 'react-router-dom';
 import ApiCall from '../../api/apiCalls';
+import PubSub from 'pubsub-js'
+
+
 
 class Login extends Component {
 
@@ -17,7 +20,16 @@ class Login extends Component {
             email:this.state.Email,
             password:this.state.Password,
         }
-        ApiCall.login(data);
+        ApiCall.login(data).then((res)=>{
+            if(res.data.error==0){
+
+                localStorage.setItem('user',JSON.stringify(res.data.user[0]));
+                this.props.history.push("/chat");
+                PubSub.publish('refreshRoute', true);
+            }else{
+                console.log(res.data.error);
+            }
+        })
 
     }
 
