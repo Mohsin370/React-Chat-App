@@ -7,6 +7,7 @@ import { Badge } from "antd";
 import { Collapse } from "antd";
 import { Link } from "react-router-dom";
 import PubSub from "pubsub-js";
+import ApiCall from '../../api/apiCalls'
 
 const { Panel } = Collapse;
 
@@ -37,14 +38,29 @@ class LeftMenu extends Component {
     }
     componentWillMount() {
         let userData = JSON.parse(localStorage.getItem("user"));
+
         console.log(userData);
         if (userData) {
+            this.getallusers(userData);
+
             FirstName = userData.first_name;
             LastName = userData.last_name;
         }
 
         this.setState({ Conversations: arr })
     }
+
+    getallusers = (userData)=>{
+        console.log(userData);
+        const data={
+            email: userData.email,
+            token: userData.token,
+        }
+        ApiCall.getallusers(data).then((res)=>{
+            console.log(res);
+        })
+    }
+
 
     logout = () => {
         localStorage.removeItem("user");

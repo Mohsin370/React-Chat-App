@@ -2,6 +2,7 @@ var express =  require ('express');
 var socket = require('socket.io');
 const bodyParser = require("body-parser");
 let usersController = require("./controllers/users");
+let ChatController = require('./controllers/chat');
 
 
 var app = express();
@@ -26,8 +27,10 @@ app.use(function (req, res, next) {
 
 
 app.post('/login',usersController.signin);
-
 app.post('/signup',usersController.signup);
+
+
+app.post('/getallusers',ChatController.getallusers);
 
 var server = app.listen(  process.env.PORT || 4000, ()=>{
     console.log("APP listening on Port 4000")

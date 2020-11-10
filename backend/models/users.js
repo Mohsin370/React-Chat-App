@@ -65,8 +65,6 @@ const signin = async (body) => {
           resolve("DB Error");
         }
         if (rows.length > 0) {
-          console.log(rows[0].password);
-
           var token = jwt.sign(email, "secret_key");
           bcrypt.compare(password, rows[0].password, (err, res) => {
             console.log("Bcrypt Comparison: ", res);
