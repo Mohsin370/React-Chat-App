@@ -3,14 +3,19 @@ import styles from './chat.module.css';
 import { Row, Col } from 'antd';
 import { Input, Button } from 'antd';
 import TextMessage from '../../components/textMessage/textMessage';
-import socketClient from 'socket.io-client'
+import socketClient from 'socket.io-client';
+import PubSub from 'pubsub-js';
 
-const Messages = [];
+
+let Messages = [];
 let socketConn;
 
 
 class Chat extends Component {
 
+    state={
+        receiver:''
+    }
     constructor() {
         super();
         this.textInput = React.createRef();
@@ -18,11 +23,16 @@ class Chat extends Component {
 
     componentDidMount() {
         socketConn = socketClient.connect('http://localhost:4000');
-        socketConn.on('Chat:receive', (data) => {
-            console.log("Message Data: ", data.message);
-            Messages.push({ Message: data.message, sender: false, Image: '' });
-            this.setState({ RefreshMessages: true });
-        })
+        let sender = JSON.parse(localStorage.getItem('user'));
+        if(sender){
+
+            socketConn.emit('user_connect',sender.email);
+            socketConn.on('Chat:receive', (data) => {
+                console.log("Message Data: ", data.message);
+                Messages.push({ Message: data.message, sender: false, Image: '' });
+                this.setState({ RefreshMessages: true });
+            })
+        }
     }
     state = {
         Message: '',
@@ -33,9 +43,14 @@ class Chat extends Component {
     }
 
     sendMessage = (event) => {
+        let sender = JSON.parse(localStorage.getItem('user'));
+        console.log('hi')
+     
         if (event.key === 'Enter' || event === 'send') {
-            socketConn.emit('Chat:receive', {
+            socketConn.emit('private_chat', {
+                sender: sender.email,
                 message: this.state.Message,
+                receiver:this.state.receiver,
             })
             Messages.push({ Message: this.state.Message, sender: true, Image: '' });
             this.setState({ RefreshMessages: true });
@@ -44,6 +59,11 @@ class Chat extends Component {
     }
 
     render() {
+        PubSub.subscribe('Receiver',(msg,user)=>{
+            console.log("Hey ",user.name);
+            Messages =[];
+            this.setState({receiver:user.name.toLowerCase()});
+        });
         return (
             <React.Fragment>
                 <Row className={styles.container}>

@@ -36,13 +36,22 @@ var server = app.listen(  process.env.PORT || 4000, ()=>{
 
 var io  = socket(server);
 
+
+var users = [];
 io.on('connection',(socket)=>{
     console.log('Socket Connection complete');
 
-    socket.on('Chat:receive',(data)=>{
-        console.log(data);
-        // io.to(socketID).emit('Chat',data);
-        io.emit(data.message);
+    socket.on('user_connect',(email)=>{
+      console.log(email);
+      users[email.toLowerCase()] = socket.id;
+      console.log(users);  
+
+    })
+
+    socket.on('private_chat',(data)=>{
+      console.log(data);
+        io.to(users[data.receiver]).emit('Chat:receive',data);
+        // io.emit(data.message);
         // socket.broadcast.emit('Chat:receive',data);
         // io.sockets.emit('Chat:receive',data)
     })
