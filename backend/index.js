@@ -31,6 +31,8 @@ app.post('/signup',usersController.signup);
 
 
 app.post('/getallusers',ChatController.getallusers);
+app.post('/getUserConversations',ChatController.getUserConversations);
+
 
 var server = app.listen(  process.env.PORT || 4000, ()=>{
     console.log("APP listening on Port 4000")

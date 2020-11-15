@@ -16,6 +16,19 @@ const getallusers = async (req, res) => {
 
 };
 
+
+const getUserConversations = async (req,res)=>{
+
+  let UserConversations = await chatModel.getUserConversations(req.body);
+  if(UserConversations){
+    res.send({error:0,UserConversations});
+  }else{
+    res.send({error:1, msg:'No Conversations Found' })
+  }
+
+}
+
 module.exports = {
   getallusers: getallusers,
+  getUserConversations: getUserConversations,
 };
