@@ -17,13 +17,18 @@ class Login extends Component {
 
     login = ()=>{
         const data={
-            email:this.state.Email,
+            email:this.state.Email.toLowerCase(),
             password:this.state.Password,
         }
         ApiCall.login(data).then((res)=>{
             if(res.data.error==0){
-
-                localStorage.setItem('user',JSON.stringify(res.data.user[0]));
+                let userData={
+                    email:res.data.user[0].email,
+                    first_name:res.data.user[0].first_name,
+                    last_name:res.data.user[0].last_name,
+                    token:res.data.token,
+                }
+                localStorage.setItem('user',JSON.stringify(userData));
                 this.props.history.push("/chat");
                 PubSub.publish('refreshRoute', true);
             }else{
