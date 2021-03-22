@@ -64,7 +64,7 @@ const signin = async (body) => {
           console.log("Error: ", err);
           resolve("DB Error");
         }
-        if (rows.length > 0) {
+        if (rows && rows.length > 0) {
           console.log(rows[0].password);
 
           var token = jwt.sign(email, "secret_key");
