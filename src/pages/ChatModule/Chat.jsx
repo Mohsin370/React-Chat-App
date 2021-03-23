@@ -75,7 +75,7 @@ class Chat extends Component {
                         })}
                     </Col>
                     <Col span={22} className={styles.MessageBox}>
-                        <Input placeholder="Enter Message Here" ref={this.textInput} onKeyDown={(event) => { this.sendMessage(event) }} onChange={this.setMessageState} onSearch={value => console.log(value)} enterButton />
+                        <Input placeholder="Enter Message Here" ref={this.textInput} onKeyDown={(event) => { this.sendMessage(event) }} onChange={this.setMessageState} onSearch={value => console.log(value)}  />
                         <Button type="primary" size="large" onClick={() => this.sendMessage('send')} >
                             Send
                         </Button>

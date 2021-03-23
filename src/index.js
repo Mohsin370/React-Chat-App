@@ -2,11 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import Routes from './pages/routes/routes'
+import Routes from "./pages/routes/routes";
+import { createStore } from "redux";
+import {Provider} from 'react-redux';
+import updateChatReducer from './redux/reducers/updateChatReducer';
+const store = createStore(updateChatReducer);
 
 ReactDOM.render(
   <React.StrictMode>
-    <Routes></Routes>
+    <Provider store={store}>
+      <Routes></Routes>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
